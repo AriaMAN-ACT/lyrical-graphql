@@ -5,11 +5,11 @@ const SongSchema = new Schema({
     title: { type: String },
     user: {
         type: Schema.Types.ObjectId,
-        ref: 'user'
+        ref: 'User'
     },
     lyrics: [{
         type: Schema.Types.ObjectId,
-        ref: 'lyric'
+        ref: 'Lyric'
     }]
 });
 
