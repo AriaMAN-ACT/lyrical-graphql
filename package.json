@@ -9,6 +9,7 @@
   "author": "AriaMAN-ACT (Aria Azadi Pour)",
   "license": "ISC",
   "dependencies": {
+    "graphql": "^15.1.0",
     "html-webpack-plugin": "^2.26.0",
     "mongoose": "^5.9.18",
     "webpack": "^2.2.0"
