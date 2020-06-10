@@ -19,4 +19,6 @@ LyricSchema.statics.like = function(id) {
         })
 };
 
-mongoose.model('lyric', LyricSchema);
+const Lyric = mongoose.model('lyric', LyricSchema);
+
+module.exports = Lyric;

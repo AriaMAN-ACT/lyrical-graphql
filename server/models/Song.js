@@ -30,4 +30,6 @@ SongSchema.statics.findLyrics = function(id) {
         .then(song => song.lyrics);
 };
 
-mongoose.model('Song', SongSchema);
+const Song = mongoose.model('Song', SongSchema);
+
+module.exports = Song;
