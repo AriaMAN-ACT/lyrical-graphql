@@ -1,24 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {graphql} from 'react-apollo';
 import gql from 'graphql-tag';
 
 import fetchSongs from "../queries/fetchSongs";
 
-const SongList = ({data: {songs = [], loading}, mutate}) => {
+const SongList = ({data: {songs = [], loading, refetch}, mutate, selectSong}) => {
+
     const renderSongs = songs.map(({title, id}) => (
-        <li key={id} className="collection-item">
+        <li key={id} className="collection-item" onClick={() => selectSong(id)}>
             {title}
             <i className="material-icons" onClick={() => {
                 mutate({
                     variables: {
                         id
-                    },
-                    refetchQueries: [
-                        {
-                            query: fetchSongs
-                        }
-                    ]
-                })
+                    }
+                }).then(refetch);
             }}>delete</i>
         </li>
     ));

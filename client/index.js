@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 import ApolloClient from 'apollo-client';
 import {InMemoryCache} from 'apollo-cache-inmemory';
@@ -8,6 +8,7 @@ import {ApolloProvider} from 'react-apollo';
 import App from "./components/App";
 import SongList from "./components/SongList";
 import CreateSong from "./components/CreateSong";
+import SongDetail from "./components/SongDetail";
 
 const apolloClient = new ApolloClient({
     link: new HttpLink(),
@@ -15,11 +16,13 @@ const apolloClient = new ApolloClient({
 });
 
 const Root = () => {
+    const [selectedSong, selectSong] = useState('');
     return (
         <ApolloProvider client={apolloClient}>
             <App>
-                <SongList/>
+                <SongList selectSong={selectSong}/>
                 <CreateSong/>
+                <SongDetail id={selectedSong}/>
             </App>
         </ApolloProvider>
     );
