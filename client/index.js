@@ -22,7 +22,10 @@ const Root = () => {
             <App>
                 <SongList selectSong={selectSong}/>
                 <CreateSong/>
-                <SongDetail id={selectedSong}/>
+                {
+                    selectedSong &&
+                    <SongDetail id={selectedSong}/>
+                }
             </App>
         </ApolloProvider>
     );
