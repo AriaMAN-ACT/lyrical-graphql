@@ -9,7 +9,9 @@
   "author": "AriaMAN-ACT (Aria Azadi Pour)",
   "license": "ISC",
   "dependencies": {
+    "apollo-cache-inmemory": "^1.6.6",
     "apollo-client": "^2.6.10",
+    "apollo-link-http": "^1.5.17",
     "axios": "^0.19.2",
     "babel-core": "^6.22.1",
     "babel-loader": "^6.2.10",
@@ -20,6 +22,7 @@
     "express": "^4.17.1",
     "express-graphql": "^0.9.0",
     "graphql": "^15.1.0",
+    "graphql-tag": "^2.10.3",
     "html-webpack-plugin": "^2.26.0",
     "lodash": "^4.17.15",
     "mongoose": "^5.9.18",
