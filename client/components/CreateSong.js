@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import {graphql} from "react-apollo";
 import gql from 'graphql-tag';
 
+import fetchSongs from "../queries/fetchSongs";
+
 const CreateSong = ({mutate}) => {
     const [song, setSong] = useState('');
 
@@ -11,8 +13,13 @@ const CreateSong = ({mutate}) => {
         mutate({
             variables: {
                 title: song
-            }
-        })
+            },
+            refetchQueries: [
+                {
+                    query: fetchSongs
+                }
+            ]
+        }).then(() => setSong(''));
     };
 
     return (
