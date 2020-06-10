@@ -1,6 +1,6 @@
 const express = require('express');
 const expressGraphQL = require('express-graphql');
-const mongoose = require('mongoose');
+
 const webpackMiddleware = require('webpack-dev-middleware');
 const bodyParser = require('body-parser');
 

@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import ApolloClient from 'apollo-client';
+import {ApolloProvider} from 'react-apollo';
 
-import LoginForm from './components/LoginForm';
+const apolloClient = new ApolloClient({});
 
-const App = () => {
+const Root = () => {
     return (
-        <div><LoginForm/></div>
+        <ApolloProvider client={apolloClient}>
+            <div>Lyrical</div>
+        </ApolloProvider>
     );
 };
 
-ReactDOM.render(<App/>, document.querySelector('#root'));
+ReactDOM.render(<Root/>, document.querySelector('#root'));

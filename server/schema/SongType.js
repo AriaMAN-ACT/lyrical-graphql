@@ -1,4 +1,3 @@
-const mongoose = require('mongoose');
 const graphql = require('graphql');
 const { GraphQLObjectType, GraphQLString, GraphQLID, GraphQLList } = graphql;
 const LyricType = require('./LyricType');
