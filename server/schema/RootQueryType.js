@@ -1,5 +1,6 @@
 const graphql = require('graphql');
 const { GraphQLObjectType, GraphQLList, GraphQLID, GraphQLNonNull } = graphql;
+
 const SongType = require('./SongType');
 const LyricType = require('./LyricType');
 const Song = require('../models/Song');
